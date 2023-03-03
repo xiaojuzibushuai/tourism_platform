@@ -1,0 +1,8 @@
+server:
+  port: 8090
+
+#swagger:
+#  basic:
+#    enable: true
+#    username: xiaojuzi
+#    password: 123456
