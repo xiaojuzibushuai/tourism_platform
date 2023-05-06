@@ -53,13 +53,13 @@
                             <li>
                                 <div class="clearfix">
                                     <div class="flt1">
-                                        <a href="javascript:;" target="_blank" class="_j_search_link">
+                                        <a href="/views/destination/detail.html?id='+dest.id" target="_blank" class="_j_search_link">
                                             <img :src="dest.coverUrl"  style="width:150px;height:90px;">
                                         </a>
                                     </div>
                                     <div class="ct-text ">
                                         <h3>
-                                            <a href="javascript:;" target="_blank" class="_j_search_link">{{dest.name}}</a>
+                                            <a href="/views/destination/detail.html?id='+dest.id" target="_blank" class="_j_search_link">{{dest.name}}</a>
                                         </h3>
                                         <p class="seg-desc" v-html="dest.info"></p>
                                         
@@ -77,7 +77,7 @@
                             <h2>
                                 <a href="javascript:;" target="_blank" class="_j_search_link" data-index="1">{{dest.name}}攻略</a>
                             </h2>
-                            <a href="javascript:;" target="_blank" class="_j_search_link" data-index="1">查看更多攻略&gt;&gt;</a>
+                            <a href="http://localhost/views/strategy/index.html" target="_blank" class="_j_search_link" data-index="1">查看更多攻略&gt;&gt;</a>
                         </div>
                         <ul>
                             <li>

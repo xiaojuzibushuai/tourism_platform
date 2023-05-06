@@ -5,6 +5,7 @@ import cn.xiaojuzi.travel.domain.StrategyCondition;
 import cn.xiaojuzi.travel.service.IStrategyConditionService;
 import cn.xiaojuzi.travel.service.IStrategyService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;

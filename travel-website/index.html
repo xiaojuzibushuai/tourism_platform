@@ -30,7 +30,7 @@
             <ul class="show-image">
 
                 <li v-if="banners.length" v-for="(b, index) in banners" :class="index==0?'first':''" class="show_image" :data-id="index">
-                    <a :href="'/views/travel/detail.html?id='+b.refid" class="show-pic">
+                    <a :href="'/views/travel/detail.html?id='+b.refid+'&destId=2'" class="show-pic">
                         <img :src="b.coverUrl">
                     </a>
                     <a href="javascript:;" class="show-title dark">
@@ -158,10 +158,10 @@
                                     <div class="tn-wrapper">
                                         <dl>
                                             <dt>
-                                                <a :href="'/views/travel/detail.html?id='+t.id" target="_blank">{{t.title}}</a>
+                                                <a :href="'/views/travel/detail.html?id='+t.id+'&destId='+t.destId" target="_blank">{{t.title}}</a>
                                             </dt>
                                             <dd>
-                                                <a :href="'/views/travel/detail.html?id='+t.id"  target="_blank">
+                                                <a :href="'/views/travel/detail.html?id='+t.id+'&destId='+t.destId"  target="_blank">
                                                     {{t.summary | subStr}}
                                                 </a>
                                             </dd>

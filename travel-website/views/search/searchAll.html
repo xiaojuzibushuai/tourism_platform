@@ -51,13 +51,13 @@
                                     <li v-for="dest in result.dests">
                                         <div class="clearfix">
                                             <div class="flt1">
-                                                <a href="javascript:;" target="_blank" class="_j_search_link">
+                                                <a href="'/views/destination/detail.html?id='+dest.id" target="_blank" class="_j_search_link">
                                                     <img :src="dest.coverUrl" style="width:150px;height:90px;">
                                                 </a>
                                             </div>
                                             <div class="ct-text ">
                                                 <h3>
-                                                    <a href="javascript:;" target="_blank" class="_j_search_link" v-html="dest.name"></a>
+                                                    <a href="/views/destination/detail.html?id='+dest.id" target="_blank" class="_j_search_link" v-html="dest.name"></a>
                                                 </h3>
                                                 <p class="seg-desc" v-html="dest.info"></p>
 
@@ -83,19 +83,19 @@
                                 <div class="clearfix">
                                     <div v-for="s in result.strategys">
                                         <div class="flt1">
-                                            <a href="javascript:;" target="_blank" class="_j_search_link">
+                                            <a href="/views/strategys/detail.html?id='+s.id" target="_blank" class="_j_search_link">
                                                 <img :src="s.coverUrl" style="width:150px;height:90px;">
                                             </a>
                                         </div>
                                         <div class="ct-text ">
                                             <h3>
-                                                <a href="javascript:;" target="_blank"
+                                                <a href="/views/strategys/detail.html?id='+s.id" target="_blank"
                                                    class="_j_search_link" v-html="s.title"></a>
                                             </h3>
                                             <p class="seg-desc" v-html="s.summary"></p>
                                             <ul class="seg-info-list clearfix">
                                                 <li>
-                                                    <a href="javascript:;" target="_blank" class="_j_search_link" v-html="s.destName"></a>
+                                                    <a href="/views/strategys/detail.html?id='+s.id" target="_blank" class="_j_search_link" v-html="s.destName"></a>
                                                 </li>
                                                 <li>
                                                     浏览({{s.viewnum}})
@@ -121,13 +121,13 @@
                         <h2>
                             <a href="javascript:;" target="_blank" class="_j_search_link" data-index="2">游记</a>
                         </h2>
-                        <a href="javascript:;" target="_blank" class="_j_search_link" data-index="2">查看更多游记
+                        <a href="http://localhost/views/travel/index.html" target="_blank" class="_j_search_link" data-index="2">查看更多游记
                             &gt;&gt;</a>
                     </div>
                     <ul>
                         <li v-for="t in result.travels">
                             <p class="clearfix">
-                                <a href="javascript:;" target="_blank"
+                                <a href="/views/travel/detail.html?id='+t.id" target="_blank"
                                     class="_j_search_link" v-html="t.title"></a>
                                 <span class="seg-info">{{t.createTime|dateFormat}}</span>
                                 <span class="seg-info">{{t.author.nickname}}</span>

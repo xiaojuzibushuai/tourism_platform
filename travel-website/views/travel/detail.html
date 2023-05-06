@@ -1343,7 +1343,7 @@
                         <div class="gonglve_slide gs1" id="_j_rec_slide_container">
                             <ul class="gs_content" style="left: 0px;">
                                 <li  v-for="t in travels" >
-                                    <a :href="'/views/travel/detail.html?id='+t.id" target="_blank" class="_j_mddrel_gl_item"
+                                    <a :href="'/views/travel/detail.html?id='+t.id+'&destId='+t.destId" target="_blank" class="_j_mddrel_gl_item"
                                        title="{{t.title}}">
                                         <img :src="t.coverUrl">
                                         <div class="bg"></div><span><i></i>{{t.viewnum}}</span>

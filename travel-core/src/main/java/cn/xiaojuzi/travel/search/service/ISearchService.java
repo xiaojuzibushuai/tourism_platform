@@ -11,10 +11,6 @@ import java.util.ArrayList;
  */
 public interface ISearchService {
 
-
-
-
-
     /**
      * 全文搜索 + 高亮显示
      * @param index 索引
