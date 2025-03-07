@@ -2,19 +2,17 @@ package cn.xiaojuzi.travel.controller;
 
 import cn.xiaojuzi.travel.annotation.RequireLogin;
 import cn.xiaojuzi.travel.annotation.UserParam;
-import cn.xiaojuzi.travel.domain.Travel;
-import cn.xiaojuzi.travel.domain.TravelContent;
-import cn.xiaojuzi.travel.domain.UserInfo;
+import cn.xiaojuzi.travel.domain.*;
 import cn.xiaojuzi.travel.mongo.domain.TravelComment;
 import cn.xiaojuzi.travel.mongo.service.ITravelCommentService;
 import cn.xiaojuzi.travel.query.TravelQuery;
 import cn.xiaojuzi.travel.redis.service.IUserInfoRedisService;
-import cn.xiaojuzi.travel.service.ITravelService;
-import cn.xiaojuzi.travel.service.IUserInfoService;
+import cn.xiaojuzi.travel.service.*;
 import cn.xiaojuzi.travel.util.JsonResult;
 import io.swagger.annotations.Api;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -41,6 +39,14 @@ public class TravelController {
 
     @Autowired
     private ITravelCommentService travelCommentService;
+
+    @Autowired
+    private IStrategyService strategyService;
+    @Autowired
+    private IStrategyThemeService strategyThemeService;
+    @Autowired
+    private IStrategyCatalogService strategyCatalogService;
+
 
     @GetMapping("/query")
     public Object query(TravelQuery qo){
@@ -90,6 +96,31 @@ public class TravelController {
     public Object updateUser(UserInfo userInfo){
         //当前登录用户对象
         return JsonResult.success(userInfo);
+    }
+
+    @GetMapping("/saveOrUpdate")
+    @ResponseBody
+    public Object saveOrUpdate(Travel travel){
+        travelService.saveOrUpdate(travel);
+        return JsonResult.success();
+    }
+
+    @RequestMapping("/input")
+    public String input(Model model, Long id){
+        if (id != null){
+            //strategy  编辑时才有
+            Strategy strategy = strategyService.getById(id);
+            //内容
+            StrategyContent content = strategyService.getContent(id);
+            strategy.setContent(content);
+            model.addAttribute("strategy", strategy);
+        }
+        //catalogs
+        model.addAttribute("catalogs", strategyCatalogService.queryGroupCatalog());
+        //themes
+        model.addAttribute("themes", strategyThemeService.list());
+
+        return "strategy/input";
     }
 
 }

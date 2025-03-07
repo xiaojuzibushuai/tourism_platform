@@ -1,12 +1,13 @@
 package cn.xiaojuzi.travel.controller;
 
+import cn.xiaojuzi.travel.query.DestinationQuery;
 import cn.xiaojuzi.travel.service.*;
 import cn.xiaojuzi.travel.util.JsonResult;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -67,6 +68,14 @@ public class DestinationController {
         return JsonResult.success(travelService.queryViewnumTop3(destId));
     }
 
-
+//    @ApiOperation(value = "查询所有目的地")
+//    @PostMapping("/list")
+//    public String list (Model model, @ModelAttribute("qo") DestinationQuery qo){
+//        //toasts
+//        model.addAttribute("toasts", destinationService.queryToasts(qo.getParentId()));
+//        //page--MP
+//        model.addAttribute("page", destinationService.queryPage(qo));
+//        return "destination/list";
+//    }
 
 }

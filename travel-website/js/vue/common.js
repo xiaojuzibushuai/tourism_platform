@@ -59,7 +59,7 @@ function ajaxRequest(url,type, param, success, fail){
             }
         },
         error:function () {
-            popup("网络不通，请联系管理员~");
+            // popup("网络不通，请联系管理员~");
         }
 
     })
